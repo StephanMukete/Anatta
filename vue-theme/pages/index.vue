@@ -1,36 +1,52 @@
 <template>
   <section class="container">
     <div>
-      <logo />
       <h1 class="title">
         vue-theme
       </h1>
       <h2 class="subtitle">
         My amazing Nuxt.js project
       </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >GitHub</a>
-      </div>
     </div>
   </section>
 </template>
 
 <script>
+import Prismic from "prismic-javascript"
 import Logo from '~/components/Logo.vue'
 
+
+
 export default {
-  components: {
-    Logo
-  }
+  async asyncData(context) {
+  var apiEndpoint ="https://vue-theme.cdn.prismic.io/api/v2";
+  let preview = {};
+ 
+  const api = await Prismic.getApi(apiEndpoint);
+  const result = await api.getByUID( 
+    'blog','quickstart'
+  );
+ // const result = await api.query(Prismic.Predicates.at("document.type", "blog"));
+  preview.description = result.data.Description;
+  preview.title = result.data.Title;
+  console.log(result.data.title[0].text)
+    console.log(result.data.description[0].text)
+  //return {preview};
+  // .then(function(api) {
+  //   return api.query("");
+  // })
+  // .then (
+  //   function(response) {
+  //     console.log("Document: ", response.results);
+  //   },
+  //   function(err) {
+  //     console.log("Something went wrong: ", err);
+  //   }
+  // );
+ },
+  // components: {
+  //   Logo
+  // }
 }
 </script>
 
