@@ -17,6 +17,17 @@
         height:60px;
         display: flex;
         justify-content: center;
-        justify-items: center
+        justify-items: center;
+        background-color: #ccc; 
+    }
+
+    .nav-items{
+        list-style-type: none;
+        padding: 0%;
+        margin: 0%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 80%;
     }
 </style>

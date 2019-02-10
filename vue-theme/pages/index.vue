@@ -1,23 +1,19 @@
 <template>
   <section class="container">
-    <div>
-      <h1 class="title">
-        vue-theme
-      </h1>
-      <h2 class="subtitle">
-        My amazing Nuxt.js project
-      </h2>
-    </div>
+    <Header />
   </section>
 </template>
 
 <script>
 import Prismic from "prismic-javascript"
-import Logo from '~/components/Logo.vue'
+import Header from '~/components/Header.vue'
 
 
 
 export default {
+    components: {
+    Header
+  },
   async asyncData(context) {
   var apiEndpoint ="https://vue-theme.cdn.prismic.io/api/v2";
   let preview = {};
@@ -44,14 +40,12 @@ export default {
   //   }
   // );
  },
-  // components: {
-  //   Logo
-  // }
+
 }
 </script>
 
 <style>
-.container {
+/* .container {
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
@@ -80,5 +74,5 @@ export default {
 
 .links {
   padding-top: 15px;
-}
+} */
 </style>
