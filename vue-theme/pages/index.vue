@@ -1,6 +1,10 @@
 <template>
   <section class="container">
     <Header />
+    <img :src="preview.homepage_banner[0].image.url" alt="homepage phote">
+    <img :src="preview.image1.url" alt="homepage">
+    <img :src="preview.image2.url" alt="homepage">
+     <!-- <div>{{preview.description[0].text}}</div> -->
   </section>
 </template>
 
@@ -20,14 +24,15 @@ export default {
  
   const api = await Prismic.getApi(apiEndpoint);
   const result = await api.getByUID( 
-    'blog','quickstart'
+    'homepage','homepage'
   );
  // const result = await api.query(Prismic.Predicates.at("document.type", "blog"));
-  preview.description = result.data.Description;
+  preview = result.data;
   preview.title = result.data.Title;
-  console.log(result.data.title[0].text)
-    console.log(result.data.description[0].text)
-  //return {preview};
+  //console.log(result.data.title[0].text)
+  console.log(preview);
+    // console.log(preview.description[0].text)
+  return {preview};
   // .then(function(api) {
   //   return api.query("");
   // })
@@ -40,11 +45,20 @@ export default {
   //   }
   // );
  },
+ data(){
+   return {
+
+   }
+ }
 
 }
 </script>
 
 <style>
+img{
+  width:100%;
+  height: 100%;
+}
 /* .container {
   margin: 0 auto;
   min-height: 100vh;
