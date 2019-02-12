@@ -4,7 +4,7 @@
     <img :src="preview.homepage_banner[0].image.url" alt="homepage phote">
     <img :src="preview.image1.url" alt="homepage">
     <img :src="preview.image2.url" alt="homepage">
-     <!-- <div>{{preview.description[0].text}}</div> -->
+
   </section>
 </template>
 
