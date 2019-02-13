@@ -18,7 +18,7 @@
         display: flex;
         justify-content: center;
         justify-items: center;
-        background-color: #ccc; 
+        /* background-color: #ccc;  */
     }
 
     .nav-items{

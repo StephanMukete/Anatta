@@ -1,9 +1,9 @@
 <template>
   <section class="container">
-    <Header />
-    <!-- <img :src="preview.homepage_banner[0].image.url" alt="homepage phote">
-    <img :src="preview.image1.url" alt="homepage">
-    <img :src="preview.image2.url" alt="homepage"> -->
+    <Header/>
+    <!-- <img id = "banner" :src="preview.homepage_banner[0].image.url" alt="homepage phote"> -->
+     <!-- <img :src="preview.image1.url" alt="homepage"> -->
+    <img id = "banner" :src="preview.cover_photo.url" alt="homepage">  
 
   </section>
 </template>
@@ -24,7 +24,7 @@ export default {
  
   const api = await Prismic.getApi(apiEndpoint);
   const result = await api.getByUID( 
-    'blogs','blogs'
+    'homepage','homepage'
   );
  // const result = await api.query(Prismic.Predicates.at("document.type", "blog"));
   preview = result.data;
@@ -58,6 +58,15 @@ export default {
 img{
   width:100%;
   height: 100%;
+}
+#banner {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 /* .container {
   margin: 0 auto;
