@@ -3,37 +3,8 @@
     <Header/>
     <!-- <img id = "banner" :src="preview.homepage_banner[0].image.url" alt="homepage phote"> -->
      <!-- <img :src="preview.image1.url" alt="homepage"> -->
-     <h1> {{preview.cover_text[0].text}} </h1>
-    <div id = "banner">
-          <img  :src="preview.cover_photo.url" alt="homepage">  
-          <div class="col2">
-               <img :src="preview.image1.url" alt="image1"> 
-               <div class="row2">
-                 <h5> {{preview.image1_maintext[0].text}} </h5>
-                 <p> {{preview.image1_subtext[0].text}} </p>
-               </div>
-              
-          </div>
-          <div class="col1">
-             <h2> {{preview.highlight_text[0].text}} </h2> 
-             <img :src="preview.book_image.url" alt="image1"> 
-              <h3> {{preview.book_title[0].text}} </h3> 
-              <p> {{preview.book_description[0].text}} </p> 
-              <div class="quote" v-for="quote in quotes" :key=quote.id>
-                 <!--   -->
-                 <p>{{ quote.quote[0].text }}</p>
-                 <img :src="quote.portrait_author.url" alt="image1">
-                 <p>{{ quote.name_of_the_author[0].text }}</p>
-              </div>
-          </div>
-          <div class="styled">
-            
-          </div>
-     
-    </div>
-    <div class="col2">
-        <!-- <img :src="preview.image1.url" alt="image1">  -->
-    </div>
+    <img id = "banner" :src="preview.cover_image.url" alt="blog cover photo">  
+
   </section>
 </template>
 
@@ -49,26 +20,19 @@ export default {
   },
   async asyncData(context) {
   var apiEndpoint ="https://vue-theme.cdn.prismic.io/api/v2";
-  let preview;
-   let quotes = [];
+  let preview = {};
  
   const api = await Prismic.getApi(apiEndpoint);
   const result = await api.getByUID( 
-    'homepage','homepage'
+    'blogs','blogs'
   );
  // const result = await api.query(Prismic.Predicates.at("document.type", "blog"));
   preview = result.data;
   preview.title = result.data.Title;
-  quotes = preview.body[0].items;
   //console.log(result.data.title[0].text)
-  //console.log(preview);
-   console.log(quotes);
+  console.log(preview);
     // console.log(preview.description[0].text)
-  return{
-    preview,
-    quotes
-  }
-  
+  return {preview};
   // .then(function(api) {
   //   return api.query("");
   // })
@@ -91,49 +55,28 @@ export default {
 </script>
 
 <style>
-/* img{
+img{
   width:100%;
   height: 100%;
-} */
+}
 #banner {
-  position: relative;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
-  height: 50%;
+  height: 100%;
   z-index: -1;
 }
-
-.col2{
-  display: flex;
-}
-
-.col2 img{
-  width: 50%;
-}
-.col2 .row2{
-  width: 50%;
-  height: 80%;
-}
-.col1{
-  color: white;
-  background-color: blue;
-  /* height: 100px; */
-}
-.quote img{
-  height: 50px;
-  width:50px;
-}
- /* .container {
+/* .container {
   margin: 0 auto;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-} */
-/*
+}
+
 .title {
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;

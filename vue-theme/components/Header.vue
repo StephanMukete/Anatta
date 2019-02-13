@@ -16,18 +16,18 @@
         width: 100%;
         height:60px;
         display: flex;
-        justify-content: center;
+        justify-content: right;
+        float: right;
         justify-items: center;
-        /* background-color: #ccc;  */
     }
 
     .nav-items{
         list-style-type: none;
         padding: 0%;
-        margin: 0%;
+        margin: 40px;
         display: flex;
         justify-content: space-around;
-        align-items: center;
-        width: 80%;
+        float: right;
+        width: 20%;
     }
 </style>
