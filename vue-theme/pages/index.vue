@@ -26,9 +26,22 @@
                  <p>{{ quote.name_of_the_author[0].text }}</p>
               </div>
           </div>
-          <div class="styled">
-            
+          <div class="col2">
+           <img :src="preview.blog1_image.url" alt="image1"> 
+            <div class="row2">
+                <h4> {{preview.blog_highlight[0].text}} </h4>
+                <h2> {{preview.blog1_tittle[0].text}} </h2>
+                <p> {{preview.blog1_description[0].text}} </p> 
+            </div>
           </div>
+           <div class="col3" v-for="i in Math.ceil(blogs.length / 3)" :key=i.id>
+              <span class="rowq" v-for=" blog in blogs.slice((i-1)*3, i*3)" :key=blog.id>
+            <img :src="blog.image_banner.url" alt="image1">
+            <h2> {{blog.title_of_banner[0].text}} </h2>
+            <p> {{blog.description[0].text}} </p>
+          </span>
+          </div>
+
      
     </div>
     <div class="col2">
@@ -50,7 +63,8 @@ export default {
   async asyncData(context) {
   var apiEndpoint ="https://vue-theme.cdn.prismic.io/api/v2";
   let preview;
-   let quotes = [];
+  let quotes = [];
+  let blogs = [];
  
   const api = await Prismic.getApi(apiEndpoint);
   const result = await api.getByUID( 
@@ -60,13 +74,15 @@ export default {
   preview = result.data;
   preview.title = result.data.Title;
   quotes = preview.body[0].items;
+  blogs = preview.body[1].items;
   //console.log(result.data.title[0].text)
-  //console.log(preview);
-   console.log(quotes);
+  console.log(blogs);
+  //  console.log(quotes);
     // console.log(preview.description[0].text)
   return{
     preview,
-    quotes
+    quotes,
+    blogs
   }
   
   // .then(function(api) {
@@ -124,6 +140,13 @@ export default {
 .quote img{
   height: 50px;
   width:50px;
+}
+.col3{
+    display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.col3 img{
+      height: 200px;
 }
  /* .container {
   margin: 0 auto;
