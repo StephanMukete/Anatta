@@ -14,29 +14,12 @@
         <font-awesome-icon :icon="['fab', 'youtube']" />
             </li>
         </ul>
-        <ul class="icons">
-
-        </ul>
+         <div class="copyright">
+             <p></p>
+             <p></p>
+             © 2019 Dr Chattergee All rights reserved 
+        </div>
     </header>
+     
 </template>
-
-<style scoped>
-    /* .header{
-        width: 100%;
-        height:60px;
-        display: flex;
-        justify-content: right;
-        float: right;
-        justify-items: center;
-    }
-
-    .nav-items{
-        list-style-type: none;
-        padding: 0%;
-        margin: 40px;
-        display: flex;
-        justify-content: space-around;
-        float: right;
-        width: 20%;
-    } */
-</style>
+      

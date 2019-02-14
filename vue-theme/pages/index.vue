@@ -8,7 +8,7 @@
           <div class="col2">
                <img :src="preview.image1.url" alt="image1"> 
                <div class="row2">
-                 <h5> {{preview.image1_maintext[0].text}} </h5>
+                 <h4> {{preview.image1_maintext[0].text}} </h4>
                  <p> {{preview.image1_subtext[0].text}} </p>
                </div>
               
@@ -40,7 +40,7 @@
             <p> {{blog.description[0].text}} </p>
           </span>
           </div>
-
+          <Footer />
      
     </div>
     <div class="col2">
@@ -52,12 +52,14 @@
 <script>
 import Prismic from "prismic-javascript"
 import Header from '~/components/Header.vue'
+import Footer from '~/components/Footer.vue'
 
 
 
 export default {
     components: {
-    Header
+    Header,
+    Footer
   },
   async asyncData(context) {
   var apiEndpoint ="https://vue-theme.cdn.prismic.io/api/v2";

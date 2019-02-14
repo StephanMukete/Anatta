@@ -7,11 +7,13 @@
                 <h5>{{preview.Image1_title[0].text}}</h5>
                 <h3>{{preview.Image1_subtitle[0].text}}</h3>
                 <p>{{preview.description[0].text}}</p>
+                <nuxt-link to="#">Read More</nuxt-link>
          </div>
       <div id="banner">
       
               <img  :src="preview.cover_image.url" alt="homepage">
       <div class="space">
+        <!-- <font-awesome-icon :icon="['fab', 'BBC']" /> -->
         <font-awesome-icon :icon="['fab', 'facebook']" />
         <font-awesome-icon :icon="['fab', 'twitter']" />
         <font-awesome-icon :icon="['fab', 'instagram']" />
@@ -110,7 +112,7 @@ img{
 
 
 .onbanner{
-    margin-top: 15%;
+    margin-top: -12rem;
     height: 27rem;
     width:18rem;
     margin-left: 60%;
@@ -147,7 +149,7 @@ margin-left: 40rem;  */
       flex-direction: column;
       
   /* grid-template-columns: repeat(2, 1fr); */
-margin-top: 10rem;
+margin-top: 1rem;
 margin-left: 20rem; 
 /* height: 10rem; */
 }
@@ -174,7 +176,7 @@ margin-left: 20rem;
 
 .col3{
   position: relative;
-  top: 30;
+  top: 0;
 margin-left: 20rem; 
     display: grid;
   grid-template-columns: repeat(2, 1fr);
