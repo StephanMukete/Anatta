@@ -1,11 +1,10 @@
 <template>
   <section class="container">
     <Header/>
-    <!-- <img id = "banner" :src="preview.homepage_banner[0].image.url" alt="homepage phote"> -->
-     <!-- <img :src="preview.image1.url" alt="homepage"> -->
      <h1> {{preview.cover_text[0].text}} </h1>
+     
     <div id = "banner">
-          <img  :src="preview.cover_photo.url" alt="homepage">  
+           <img  :src="preview.cover_photo.url" alt="homepage"> 
           <div class="col2">
                <img :src="preview.image1.url" alt="image1"> 
                <div class="row2">
@@ -106,18 +105,18 @@ export default {
 }
 </script>
 
-<style>
-/* img{
+<style scoped>
+img{
   width:100%;
   height: 100%;
-} */
+}
 #banner {
-  position: relative;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   width: 100%;
-  height: 50%;
+  height: 100%;
   z-index: -1;
 }
 
@@ -127,6 +126,7 @@ export default {
 
 .col2 img{
   width: 50%;
+  height:25rem
 }
 .col2 .row2{
   width: 50%;

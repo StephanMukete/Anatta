@@ -8,14 +8,18 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "sass": "node-sass -w scss/ -o assets/css/ --recursive"
   },
   "dependencies": {
     "cross-env": "^5.2.0",
+    "node-sass": "^4.11.0",
     "nuxt": "^2.3.4",
     "prismic-javascript": "^2.0.1"
   },
   "devDependencies": {
     "nodemon": "^1.18.9"
-  }
+  },
+  "main": "nuxt.config.js",
+  "license": "ISC"
 }

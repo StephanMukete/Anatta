@@ -1,9 +1,37 @@
 <template>
   <section class="container">
     <Header/>
-    <!-- <img id = "banner" :src="preview.homepage_banner[0].image.url" alt="homepage phote"> -->
-     <!-- <img :src="preview.image1.url" alt="homepage"> -->
-    <img id = "banner" :src="preview.cover_image.url" alt="blog cover photo">  
+      <h1>{{preview.title[0].text}}</h1>
+                     <div class="onbanner">
+                <img :src="preview.image1.url" alt="blog cover photo"> 
+                <h5>{{preview.Image1_title[0].text}}</h5>
+                <h3>{{preview.Image1_subtitle[0].text}}</h3>
+                <p>{{preview.description[0].text}}</p>
+         </div>
+      <div id="banner">
+              <img  :src="preview.cover_image.url" alt="homepage">
+      <div class="space"></div>
+
+          <div  id="banner2" v-for="photo in photos" :key=photo.id>
+                <img :src="photo.gallery_image.url" alt="image1"> 
+                <img  :src="preview.cover_image.url" alt="homepage">
+                <img  :src="preview.cover_image.url" alt="homepage">
+           </div>
+           
+                        <div class="col3" v-for="i in Math.ceil(blogs.length / 2)" :key=i.id>
+              <span class="rowq" v-for=" blog in blogs.slice((i-1)*2, i*2)" :key=blog.id>
+
+            <img :src="blog.image_banner.url" alt="image1">
+            <h5> {{blog.title_of_banner[0].text}} </h5>
+            <h2> {{blog.subtitle_of_banner[0].text}} </h2>
+            <p> {{blog.description[0].text}} </p>
+              </span>
+          </div>
+          
+
+        
+      </div>
+      
 
   </section>
 </template>
@@ -12,8 +40,6 @@
 import Prismic from "prismic-javascript"
 import Header from '~/components/Header.vue'
 
-
-
 export default {
     components: {
     Header
@@ -21,6 +47,8 @@ export default {
   async asyncData(context) {
   var apiEndpoint ="https://vue-theme.cdn.prismic.io/api/v2";
   let preview = {};
+  let photos = [];
+  let blogs = [];
  
   const api = await Prismic.getApi(apiEndpoint);
   const result = await api.getByUID( 
@@ -28,22 +56,14 @@ export default {
   );
  // const result = await api.query(Prismic.Predicates.at("document.type", "blog"));
   preview = result.data;
-  preview.title = result.data.Title;
-  //console.log(result.data.title[0].text)
-  console.log(preview);
-    // console.log(preview.description[0].text)
-  return {preview};
-  // .then(function(api) {
-  //   return api.query("");
-  // })
-  // .then (
-  //   function(response) {
-  //     console.log("Document: ", response.results);
-  //   },
-  //   function(err) {
-  //     console.log("Something went wrong: ", err);
-  //   }
-  // );
+  photos = preview.body[1].items;
+  blogs = preview.body[0].items;
+  console.log(blogs);
+  return {
+      preview,
+      photos,
+      blogs
+    };
  },
  data(){
    return {
@@ -54,7 +74,8 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+
 img{
   width:100%;
   height: 100%;
@@ -68,34 +89,82 @@ img{
   height: 100%;
   z-index: -1;
 }
-/* .container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+#banner2 {
+  position: absolute;
+  top: 50rem;
+  left: 0;
+  right: 0;
+  width: 20%;
+  height: 30%;
+  z-index: -1;
+}
+.onbanner{
+    margin-top: 15%;
+    height: 27rem;
+    width:18rem;
+    margin-left: 60%;
+    background: white;
+    position: absolute;
+}
+ .onbanner img{
+    height: 50%;
+    width:100%;
+    /* margin-top: 20rem; */
+    /* margin-left: 20rem */
+}
+.flex{
+    display: flex;
+    float: left;
+    flex-direction: column;
+
+     /* flex-wrap: nowrap; */
+}
+/* .flex .col11{
+  width: 30%;
+  height: 100%;} */
+.f{
+      display: flex;
+      flex-direction: column;
+      
+  /* grid-template-columns: repeat(2, 1fr); */
+/* margin-top: 10rem;
+margin-left: 40rem;  */
+/* height: 10rem; */
+}
+.flex2{
+      display: flex;
+      flex-direction: column;
+      
+  /* grid-template-columns: repeat(2, 1fr); */
+margin-top: 10rem;
+margin-left: 20rem; 
+/* height: 10rem; */
+}
+.col3 img {
+    width: 50%;
+    height: 50%;
+}
+.flex2 h2 {
+    width: 50%;
+    height: 50%;
+}
+.flex2 p {
+    width: 50%;
+    height: 50%;
+}
+.col22 img {
+    width: 90%;
+    height: 50%;
+}
+.space{
+    height: 10rem;
 }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+.col3{
+  margin-top: 10rem;
+margin-left: 20rem; 
+    display: grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-} */
 </style>

@@ -12,7 +12,7 @@
 </template>
 
 <style scoped>
-    .header{
+    /* .header{
         width: 100%;
         height:60px;
         display: flex;
@@ -29,5 +29,5 @@
         justify-content: space-around;
         float: right;
         width: 20%;
-    }
+    } */
 </style>
