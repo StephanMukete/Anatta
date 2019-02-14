@@ -9,13 +9,36 @@
                 <p>{{preview.description[0].text}}</p>
          </div>
       <div id="banner">
+      
               <img  :src="preview.cover_image.url" alt="homepage">
-      <div class="space"></div>
+      <div class="space">
+        <font-awesome-icon :icon="['fab', 'facebook']" />
+        <font-awesome-icon :icon="['fab', 'twitter']" />
+        <font-awesome-icon :icon="['fab', 'instagram']" />
+        <font-awesome-icon :icon="['fab', 'youtube']" />
+      </div>
+        
+        <div id="banner2" v-for="i in Math.ceil(photos.length / 2)" :key=i.id>
+        
+        <h2>be updated</h2>
+        <p>subscribe to my channel to make sure you dont miss any info</p>
+            <div class="content">
+      <form name="contact" action="" method="post">
+        <label class="form-label" for="email">
+          Email:
+        </label>
+        <input class="form-field" name="email" id="email" />
 
-          <div  id="banner2" v-for="photo in photos" :key=photo.id>
+        <input class="form-button" type="submit" value="Subscribe" />
+      </form>
+    </div>
+        
+              <span class="rowq" v-for=" photo in photos.slice((i-1)*2, i*2)" :key=photo.id>
+          <!-- <div  id="banner2" v-for="photo in photos" :key=photo.id> -->
                 <img :src="photo.gallery_image.url" alt="image1"> 
-                <img  :src="preview.cover_image.url" alt="homepage">
-                <img  :src="preview.cover_image.url" alt="homepage">
+              
+              </span>
+             
            </div>
            
                         <div class="col3" v-for="i in Math.ceil(blogs.length / 2)" :key=i.id>
@@ -28,10 +51,10 @@
               </span>
           </div>
           
-
+    <Footer/>
         
       </div>
-      
+  
 
   </section>
 </template>
@@ -39,10 +62,14 @@
 <script>
 import Prismic from "prismic-javascript"
 import Header from '~/components/Header.vue'
+import Footer from '~/components/Footer.vue'
+
+// import Header from '~/components/Header.vue'
 
 export default {
     components: {
-    Header
+    Header,
+    Footer
   },
   async asyncData(context) {
   var apiEndpoint ="https://vue-theme.cdn.prismic.io/api/v2";
@@ -80,24 +107,8 @@ img{
   width:100%;
   height: 100%;
 }
-#banner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-#banner2 {
-  position: absolute;
-  top: 50rem;
-  left: 0;
-  right: 0;
-  width: 20%;
-  height: 30%;
-  z-index: -1;
-}
+
+
 .onbanner{
     margin-top: 15%;
     height: 27rem;
@@ -153,6 +164,7 @@ margin-left: 20rem;
     height: 50%;
 }
 .col22 img {
+  top:0;
     width: 90%;
     height: 50%;
 }
@@ -161,7 +173,8 @@ margin-left: 20rem;
 }
 
 .col3{
-  margin-top: 10rem;
+  position: relative;
+  top: 30;
 margin-left: 20rem; 
     display: grid;
   grid-template-columns: repeat(2, 1fr);

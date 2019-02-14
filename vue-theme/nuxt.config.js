@@ -36,6 +36,7 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
+     '~/plugins/font-awesome.js'
   ],
 
   /*
@@ -51,6 +52,8 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
+   transpile: [/font-awesome/],
+   
     extend(config, ctx) {
       
     }
