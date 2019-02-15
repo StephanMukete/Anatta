@@ -35,6 +35,17 @@ section {
       margin-left: 1.5rem;
       padding: 0.5rem; }
 
+.onbanner {
+  margin-top: -17rem;
+  height: 27rem;
+  width: 18rem;
+  margin-left: 60%;
+  background: white;
+  position: absolute; }
+  .onbanner img {
+    height: 50%;
+    width: 100%; }
+
 .content {
   width: 100%;
   background-color: whitesmoke; }
@@ -96,15 +107,6 @@ h4 {
 .container {
   margin: 0; }
 
-.col2 {
-  display: flex;
-  padding-top: 2rem; }
-  .col2 img {
-    width: 50%;
-    height: 30rem; }
-  .col2 h2 {
-    font-weight: 1px; }
-
 img {
   width: 100%;
   height: 100%; }
@@ -132,6 +134,21 @@ img {
   .col1 img {
     width: 70%; }
 
+.col2 {
+  display: flex;
+  padding-top: 2rem; }
+  .col2 img {
+    width: 50%;
+    height: 30rem; }
+  .col2 h2 {
+    font-weight: 1px; }
+
+.col3 {
+  position: relative;
+  top: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); }
+
 #quote {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -146,7 +163,6 @@ img {
   padding: 2rem;
   width: 20%;
   display: flex;
-  justify-content: left;
   float: left;
   justify-items: center; }
   .f-icons li {
@@ -154,6 +170,14 @@ img {
     display: flex;
     justify-content: space-around;
     width: 20%; }
+
+.bg {
+  padding: 2rem;
+  background-color: gray; }
+
+.space {
+  background-color: whitesmoke;
+  height: 10rem; }
 
 #outerWrap {
   position: relative;
