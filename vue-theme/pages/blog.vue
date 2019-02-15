@@ -19,30 +19,33 @@
         <font-awesome-icon :icon="['fab', 'instagram']" />
         <font-awesome-icon :icon="['fab', 'youtube']" />
       </div>
-        
         <div id="banner2" v-for="i in Math.ceil(photos.length / 2)" :key=i.id>
         
+            <div class="content">
+              
+      <form name="contact" action="" method="post">
+        <div class="box">
         <h2>be updated</h2>
         <p>subscribe to my channel to make sure you dont miss any info</p>
-            <div class="content">
-      <form name="contact" action="" method="post">
         <label class="form-label" for="email">
           Email:
         </label>
         <input class="form-field" name="email" id="email" />
 
         <input class="form-button" type="submit" value="Subscribe" />
+        </div>
+
       </form>
-    </div>
+    
         
-              <span class="rowq" v-for=" photo in photos.slice((i-1)*2, i*2)" :key=photo.id>
+              <span class="row" v-for=" photo in photos.slice((i-1)*2, i*2)" :key=photo.id>
           <!-- <div  id="banner2" v-for="photo in photos" :key=photo.id> -->
                 <img :src="photo.gallery_image.url" alt="image1"> 
               
               </span>
              
            </div>
-           
+           </div>
                         <div class="col3" v-for="i in Math.ceil(blogs.length / 2)" :key=i.id>
               <span class="rowq" v-for=" blog in blogs.slice((i-1)*2, i*2)" :key=blog.id>
 
@@ -52,7 +55,6 @@
             <p> {{blog.description[0].text}} </p>
               </span>
           </div>
-          
     <Footer/>
         
       </div>
@@ -112,7 +114,7 @@ img{
 
 
 .onbanner{
-    margin-top: -12rem;
+    margin-top: -17rem;
     height: 27rem;
     width:18rem;
     margin-left: 60%;
@@ -154,8 +156,8 @@ margin-left: 20rem;
 /* height: 10rem; */
 }
 .col3 img {
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 25rem;
 }
 .flex2 h2 {
     width: 50%;
@@ -171,6 +173,7 @@ margin-left: 20rem;
     height: 50%;
 }
 .space{
+  background-color: whitesmoke;
     height: 10rem;
 }
 
@@ -181,5 +184,8 @@ margin-left: 20rem;
     display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
-
+.bg{
+  padding: 2rem;
+  background-color: gray
+}
 </style>

@@ -14,12 +14,25 @@
               
           </div>
           <div class="col1">
+         
              <h2> {{preview.highlight_text[0].text}} </h2> 
-             <img :src="preview.book_image.url" alt="image1"> 
-              <h3> {{preview.book_title[0].text}} </h3> 
-              <p> {{preview.book_description[0].text}} </p> 
+                <div class="icons">
+              <img src="~/assets/icons/BBC_News.svg" alt="Kiwi standing on oval">
+            </div>
+            <div id="outerWrap">
+              <div id="layer1">
+                <img :src="preview.book_image.url" alt="image1">
+              </div>
+              <div id="layer2">
+                              <h3> {{preview.book_title[0].text}} </h3> 
+              <p> {{preview.book_description[0].text}} </p>
+              </div>
+            </div>
+<!--             
+              <div class="onbanner3">
+
+          </div> -->
               <div class="quote" v-for="quote in quotes" :key=quote.id>
-                 <!--   -->
                  <p>{{ quote.quote[0].text }}</p>
                  <img :src="quote.portrait_author.url" alt="image1">
                  <p>{{ quote.name_of_the_author[0].text }}</p>
@@ -108,29 +121,12 @@ export default {
 </script>
 
 <style scoped>
-img{
-  width:100%;
-  height: 100%;
-}
 
-
-.col2{
-  display: flex;
-}
-
-.col2 img{
-  width: 50%;
-  height:25rem
-}
 .col2 .row2{
   width: 50%;
   height: 80%;
 }
-.col1{
-  color: white;
-  background-color: blue;
-  /* height: 100px; */
-}
+
 .quote img{
   height: 50px;
   width:50px;
