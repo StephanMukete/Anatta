@@ -14,10 +14,13 @@
               <img  :src="preview.cover_image.url" alt="homepage">
       <div class="space">
         <!-- <font-awesome-icon :icon="['fab', 'BBC']" /> -->
-        <font-awesome-icon :icon="['fab', 'facebook']" />
-        <font-awesome-icon :icon="['fab', 'twitter']" />
-        <font-awesome-icon :icon="['fab', 'instagram']" />
-        <font-awesome-icon :icon="['fab', 'youtube']" />
+        <div class="f-icons">
+            <li><font-awesome-icon :icon="['fab', 'facebook']" /> </li>
+            <li><font-awesome-icon :icon="['fab', 'twitter']" /></li>
+        <li><font-awesome-icon :icon="['fab', 'instagram']" /></li>
+        <li> <font-awesome-icon :icon="['fab', 'youtube']" /></li>
+        </div>
+
       </div>
         <div id="banner2" v-for="i in Math.ceil(photos.length / 2)" :key=i.id>
         
