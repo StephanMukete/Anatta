@@ -6,8 +6,9 @@
               <img :src="preview.image1.url" alt="blog cover photo"> 
               <h5>{{preview.Image1_title[0].text}}</h5>
               <h3>{{preview.Image1_subtitle[0].text}}</h3>
-              <p>{{preview.description[0].text}}</p>
-              <nuxt-link to="#">Read More</nuxt-link>
+              <p>{{preview.description[0].text}}
+ <nuxt-link to="#">Read More</nuxt-link>
+              </p>
          </div>
          <div id="banner">
             <img  :src="preview.cover_image.url" alt="homepage">
@@ -32,10 +33,10 @@
                             <input class="form-field" name="email" id="email" />
                             <input class="form-button" type="submit" value="Subscribe" />
                         </div>
-                    </form>
-                    <span class="row" v-for=" photo in photos.slice((i-1)*2, i*2)" :key=photo.id>    
+                        <span class="row" v-for=" photo in photos.slice((i-1)*2, i*2)" :key=photo.id>    
                         <img :src="photo.gallery_image.url" alt="image1">   
                     </span>
+                    </form>
                 </div>
             </div>
         

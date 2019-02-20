@@ -3,7 +3,9 @@
         <Header/>
             <h1> {{preview.cover_text[0].text}} </h1>
             <div id = "banner">
-                <img  :src="preview.cover_photo.url" alt="homepage"> 
+                <div class="homepage">
+<img  :src="preview.cover_photo.url" alt="homepage">
+                </div> 
                 <div class="col2">
                     <img :src="preview.image1.url" alt="image1"> 
                     <div class="row2">
@@ -14,8 +16,12 @@
                 <div class="col1">
                     <h2> {{preview.highlight_text[0].text}} </h2> 
                     <div class="icons">
-                    <img src="~/assets/icons/BBC_News.svg" alt="Kiwi standing on oval">
-                </div>
+                    <img src="~/assets/icons/BBC_News.svg" alt="BBC News">
+                    <img src="~/assets/icons/BBC.svg" alt="BBC">
+                    <img src="~/assets/icons/logo-mbg-lg.svg" alt="logo mba">
+                    <img src="~/assets/icons/Daily_Telegraph.svg" alt="Daily Telegraph">
+                    <img src="~/assets/icons/The_Huffington_Post_Logo.svg" alt="Huphington post">
+                    </div>
                 <div id="outerWrap">
                     <div id="layer1">
                         <img :src="preview.book_image.url" alt="image1">
@@ -134,4 +140,50 @@ export default {
 .col3 img{
       height: 22rem;
 }
+
+@media screen and (min-width: 1171px) {
+  .projects {
+    grid-template-columns: repeat(4, 1fr); } 
+    .onbanner{
+      margin-top: -17rem;
+  }
+  }
+
+@media screen and (min-width: 769px) and (max-width: 170px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr); } 
+    .onbanner{
+      margin-top: -13rem;
+  }
+  #banner2 {
+    width: 44%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(-100, 0, 0);
+    font-size: 24px;
+   }
+
+.col3{
+       grid-template-columns: repeat(2, 1fr);
+}
+.col2 .row2{
+  width: 100%;
+  height: 80%;
+}
+}
+@media screen and (max-width: 500px) {
+  .col3{
+    grid-template-columns: 1fr;
+}
+.col2 .row2{
+  width: 100%;
+  height: 80%;
+}
+
+  }
 </style>

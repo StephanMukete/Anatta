@@ -19,12 +19,13 @@ section {
   left: 0;
   right: 0;
   width: 26%;
-  height: 30%;
+  height: 100%;
   z-index: -2;
   display: flex;
   flex-direction: column; }
-  #banner2 img, #banner2 form {
-    padding: 1.5rem; }
+  #banner2 img {
+    padding: 1.5rem;
+    height: 35%; }
   #banner2 form {
     padding: 1rem;
     background-color: whitesmoke; }
@@ -36,14 +37,13 @@ section {
       padding: 0.5rem; }
 
 .onbanner {
-  margin-top: -17rem;
-  height: 27rem;
+  margin-top: -13rem;
   width: 18rem;
   margin-left: 60%;
   background: white;
   position: absolute; }
   .onbanner img {
-    height: 50%;
+    height: 60%;
     width: 100%; }
 
 .content {
@@ -64,28 +64,23 @@ section {
   background-color: white;
   width: 50%; }
 
-.header {
-  margin-top: 3rem;
-  margin-left: 30rem;
-  width: 100%;
-  display: flex;
-  justify-content: right;
-  float: right;
-  justify-items: center; }
-
-.footer {
-  background-color: gainsboro;
-  padding: 1rem; }
-  .footer li {
-    padding: 0.5rem; }
+header {
+  margin-top: 5%;
+  margin-left: 35%; }
 
 .nav-items {
   list-style-type: none;
-  margin-left: 77%;
+  margin-left: 67%;
   display: flex;
   justify-content: space-around;
-  float: left;
   width: 20%; }
+  .nav-items li {
+    padding: 12%; }
+
+.footer {
+  background-color: gainsboro; }
+  .footer li {
+    padding: 0.5rem; }
 
 h5 {
   color: blue; }
@@ -93,7 +88,7 @@ h5 {
 h1 {
   padding-top: 30%;
   padding-left: 5%;
-  font-size: 5rem;
+  font-size: 3.5rem;
   font-weight: 13%;
   color: white;
   width: 40%; }
@@ -103,9 +98,6 @@ h2, h3, h5, h4, p {
 
 h4 {
   font-size: 1.5rem; }
-
-.container {
-  margin: 0; }
 
 img {
   width: 100%;
@@ -119,20 +111,22 @@ img {
   color: white;
   background-color: blue; }
 
-.icons {
-  margin-left: 45%;
-  height: 8rem;
-  width: 8rem; }
-
 .col1 {
   color: white;
+  background-image: url("../images/Wave-buildtrust-desktop.png");
   background-color: blue; }
   .col1 h2 {
     text-align: center;
     width: 40%;
     margin-left: 30%; }
   .col1 img {
-    width: 70%; }
+    width: 75%; }
+  .col1 .icons {
+    display: flex;
+    padding: 10%;
+    width: 50%; }
+    .col1 .icons img {
+      padding: 10%; }
 
 .col2 {
   display: flex;
@@ -183,24 +177,155 @@ img {
   position: relative;
   z-index: 0;
   height: 400px;
-  width: 650px; }
+  width: 600px; }
 
 #layer1 {
   position: absolute;
   z-index: 2;
   height: 50;
-  width: 350px;
+  width: 300px;
   top: 40px;
-  left: 40%; }
+  left: 20%; }
 
 #layer2 {
   position: relative;
   z-index: 1;
   color: black;
   background-color: white;
-  padding-left: 10rem;
-  padding-right: 4rem;
+  padding-left: 10%;
+  padding-right: 1rem;
   height: 90%;
   width: 70%;
   top: 25%;
-  left: 60%; }
+  left: 50%; }
+
+@media screen and (min-width: 1171px) {
+  h1 {
+    font-size: 5rem; }
+  #outerWrap {
+    height: 400px;
+    width: 700px; }
+    #outerWrap #layer1 {
+      width: 350px;
+      top: 40px;
+      left: 50%; }
+    #outerWrap #layer2 {
+      margin-left: 18%;
+      padding-left: 10%;
+      padding-right: 0;
+      width: 60%;
+      left: 60%; } }
+
+@media screen and (min-width: 769px) and (max-width: 170px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr); }
+  .onbanner {
+    margin-top: -13rem; }
+  #banner2 {
+    width: 30%; } }
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem; }
+  .nav-items {
+    width: 10%;
+    margin-left: 60%;
+    padding: 2%; }
+  .col3 {
+    grid-template-columns: 1fr; }
+  .col1 h2 {
+    width: 80%;
+    margin-left: 10%; }
+  .col1 .icons {
+    margin-top: 10%;
+    margin-bottom: 8%;
+    width: 25%; }
+  .col2 {
+    display: flex;
+    flex-direction: column; }
+    .col2 img {
+      width: 100%;
+      height: 100%; }
+      .col2 img h2 {
+        width: 100%;
+        height: 100%; }
+  #quote {
+    grid-template-columns: 1fr;
+    padding-left: 1rem;
+    padding-right: 1rem; }
+  #outerWrap {
+    height: 450px;
+    width: 485px; }
+    #outerWrap #layer1 {
+      width: 220px;
+      top: 40px;
+      left: 10%; }
+    #outerWrap #layer2 {
+      margin-left: 22%;
+      padding-left: 13%;
+      padding-right: 0;
+      width: 50%;
+      left: 8%; }
+  .footer {
+    background-color: gainsboro; }
+    .footer li {
+      padding: 30%; }
+  .menu-nav {
+    height: 75vh;
+    transform: translate3d(-100, 0, 0);
+    font-size: 24px; }
+  .onbanner {
+    margin-top: -10rem; }
+  .list {
+    grid-template-columns: 1fr; }
+  .col3 {
+    grid-template-columns: 1fr; }
+  #banner2 {
+    width: 44%; } }
+
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 1.5rem; }
+  .nav-items {
+    width: 10%;
+    margin-left: 60%;
+    padding: 2%; }
+  .col3 {
+    grid-template-columns: 1fr; }
+  .col1 h2 {
+    width: 80%;
+    margin-left: 10%; }
+  .col1 .icons {
+    margin-top: 10%;
+    margin-bottom: 8%;
+    width: 25%; }
+  .col2 {
+    display: flex;
+    flex-direction: column; }
+    .col2 img {
+      width: 100%;
+      height: 100%; }
+      .col2 img h2 {
+        width: 100%;
+        height: 100%; }
+  #quote {
+    grid-template-columns: 1fr;
+    padding-left: 1rem;
+    padding-right: 1rem; }
+  #outerWrap {
+    height: 500px;
+    width: 400px; }
+    #outerWrap #layer1 {
+      width: 200px;
+      top: 40px;
+      left: 1%; }
+    #outerWrap #layer2 {
+      margin-left: 18%;
+      padding-left: 10%;
+      padding-right: 0;
+      width: 50%;
+      left: 8%; }
+  .footer {
+    background-color: gainsboro; }
+    .footer li {
+      padding: 30%; } }
