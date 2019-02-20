@@ -15,31 +15,25 @@
                 </div>
                 <div class="col1">
                     <h2> {{preview.highlight_text[0].text}} </h2> 
-                    <div class="icons">
-                    <img src="~/assets/icons/BBC_News.svg" alt="BBC News">
-                    <img src="~/assets/icons/BBC.svg" alt="BBC">
-                    <img src="~/assets/icons/logo-mbg-lg.svg" alt="logo mba">
-                    <img src="~/assets/icons/Daily_Telegraph.svg" alt="Daily Telegraph">
-                    <img src="~/assets/icons/The_Huffington_Post_Logo.svg" alt="Huphington post">
-                    </div>
-                <div id="outerWrap">
-                    <div id="layer1">
-                        <img :src="preview.book_image.url" alt="image1">
-                    </div>
-                    <div id="layer2">
-                        <h3> {{preview.book_title[0].text}} </h3> 
-                        <p> {{preview.book_description[0].text}} </p>
-                    </div>
-                </div>
-                <div id="quote">
-                    <div class="quote" v-for="quote in quotes" :key=quote.id>
-                        <p>{{ quote.quote[0].text }}</p>
-                        <div class="col2">
-                            <img :src="quote.portrait_author.url" alt="image1">
-                            <p>{{ quote.name_of_the_author[0].text }}</p>
+                    <Logo/>
+                    <div id="outerWrap">
+                        <div id="layer1">
+                            <img :src="preview.book_image.url" alt="image1">
+                        </div>
+                        <div id="layer2">
+                            <h3> {{preview.book_title[0].text}} </h3> 
+                            <p> {{preview.book_description[0].text}} </p>
                         </div>
                     </div>
-                </div>
+                    <div id="quote">
+                        <div class="quote" v-for="quote in quotes" :key=quote.id>
+                            <p>{{ quote.quote[0].text }}</p>
+                            <div class="col2">
+                                <img :src="quote.portrait_author.url" alt="image1">
+                                <p>{{ quote.name_of_the_author[0].text }}</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="col2">
                     <img :src="preview.blog1_image.url" alt="image1"> 
@@ -66,124 +60,93 @@
 import Prismic from "prismic-javascript"
 import Header from '~/components/Header.vue'
 import Footer from '~/components/Footer.vue'
+import Logo from '~/components/Logo.vue'
 
 
 
 export default {
     components: {
     Header,
-    Footer
+    Footer,
+    Logo
   },
-  async asyncData(context) {
-  var apiEndpoint ="https://vue-theme.cdn.prismic.io/api/v2";
-  let preview;
-  let quotes = [];
-  let blogs = [];
- 
-  const api = await Prismic.getApi(apiEndpoint);
-  const result = await api.getByUID( 
-    'homepage','homepage'
-  );
- // const result = await api.query(Prismic.Predicates.at("document.type", "blog"));
-  preview = result.data;
-  preview.title = result.data.Title;
-  quotes = preview.body[0].items;
-  blogs = preview.body[1].items;
-  //console.log(result.data.title[0].text)
-  console.log(blogs);
-  //  console.log(quotes);
-    // console.log(preview.description[0].text)
-  return{
-    preview,
-    quotes,
-    blogs
-  }
-  
-  // .then(function(api) {
-  //   return api.query("");
-  // })
-  // .then (
-  //   function(response) {
-  //     console.log("Document: ", response.results);
-  //   },
-  //   function(err) {
-  //     console.log("Something went wrong: ", err);
-  //   }
-  // );
- },
- data(){
-   return {
-
-   }
+    async asyncData(context) {
+        let apiEndpoint ="https://vue-theme.cdn.prismic.io/api/v2";
+        let preview;
+        let quotes = [];
+        let blogs = [];
+    
+        const api = await Prismic.getApi(apiEndpoint);
+        const result = await api.getByUID( 
+            'homepage','homepage'
+        );
+    
+        preview = result.data;
+        preview.title = result.data.Title;
+        quotes = preview.body[0].items;
+        blogs = preview.body[1].items;
+    
+        return{
+            preview,
+            quotes,
+            blogs
+        }
+    }
  }
-
-}
+ 
 </script>
 
 <style scoped>
 
 .col2 .row2{
-  width: 50%;
-  height: 80%;
+    width: 50%;
+    height: 80%;
 }
 
 .quote img{
-  height: 50px;
-  width:50px;
+    height: 50px;
+    width:50px;
 }
+
 .col3{
-
     display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin-top: 2rem;
-}
-.col3 img{
-      height: 22rem;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 2rem;
 }
 
+.col3 img{
+    height: 22rem;
+}
+
+/* Media queries section*/
 @media screen and (min-width: 1171px) {
-  .projects {
-    grid-template-columns: repeat(4, 1fr); } 
-    .onbanner{
-      margin-top: -17rem;
-  }
+
   }
 
 @media screen and (min-width: 769px) and (max-width: 170px) {
-  .projects {
-    grid-template-columns: repeat(3, 1fr); } 
-    .onbanner{
-      margin-top: -13rem;
-  }
-  #banner2 {
-    width: 44%;
-  }
+
 }
 
 @media screen and (max-width: 768px) {
 
-  .menu-nav {
-    height: 75vh;
-    transform: translate3d(-100, 0, 0);
-    font-size: 24px;
-   }
+    .col3{
+        grid-template-columns: repeat(2, 1fr);
+    }
 
-.col3{
-       grid-template-columns: repeat(2, 1fr);
-}
-.col2 .row2{
-  width: 100%;
-  height: 80%;
-}
+    .col2 .row2{
+        width: 100%;
+        height: 80%;
+    }
 }
 @media screen and (max-width: 500px) {
-  .col3{
+    .col3{
     grid-template-columns: 1fr;
-}
-.col2 .row2{
-  width: 100%;
-  height: 80%;
+    }
+    
+    .col2 .row2{
+        width: 100%;
+        height: 80%;
+    }   
 }
 
-  }
 </style>
