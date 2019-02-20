@@ -11,7 +11,9 @@
               </p>
          </div>
          <div id="banner">
-            <img  :src="preview.cover_image.url" alt="homepage">
+             <div class="cover-photo">
+                <img  :src="preview.cover_image.url" alt="blog photo">
+             </div>
             <div class="space">
                 <div class="f-icons">
                     <li><font-awesome-icon :icon="['fab', 'facebook']" /> </li>
@@ -39,7 +41,7 @@
                     </form>
                 </div>
             </div>
-        
+        <div class="blogs">
             <div class="col3" v-for="i in Math.ceil(blogs.length / 2)" :key=i.id>
                 <span class="rowq" v-for=" blog in blogs.slice((i-1)*2, i*2)" :key=blog.id>
                     <img :src="blog.image_banner.url" alt="image1">
@@ -48,6 +50,8 @@
                     <p> {{blog.description[0].text}} </p>
                 </span>
             </div>
+        </div>
+
         
             <Footer/>
         </div>
@@ -90,10 +94,66 @@ export default {
 
 <style scoped>
 .col3{
-  margin-left:20rem
+  margin-left:20rem;
+ 
+}
+/* .blogs{
+     margin-top:20rem;
+} */
+.col3 img {
+  width: 100%;
+  height: 16rem;
+}
+  @media screen and (min-width: 1171px) {
+ 
+    .onbanner{
+      margin-top: -17rem;
+  }
+  .col3{
+   margin-left:25rem;
+   margin-top: 0;
+}
+  }
+
+@media screen and (min-width: 769px) and (max-width: 170px) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr); } 
+    .onbanner{
+      margin-top: -13rem;
+  }
+  #banner2 {
+    width: 44%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+
+  .col3{
+    margin-left:0;
+ 
 }
 .col3 img {
   width: 100%;
-  height: 25rem;
+  height: 20rem;
 }
+.blogs{
+   margin-top:80rem;
+}
+.col3{
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+}
+@media screen and (max-width: 500px) {
+    .blogs{
+margin-top:62rem;
+    }
+  .col3{
+
+    grid-template-columns:  1fr;
+}
+}
+
 </style>

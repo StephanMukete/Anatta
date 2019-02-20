@@ -18,7 +18,7 @@ section {
   top: 45rem;
   left: 0;
   right: 0;
-  width: 26%;
+  width: 28%;
   height: 100%;
   z-index: -2;
   display: flex;
@@ -33,7 +33,6 @@ section {
       margin-top: 10rem;
       background-color: white; }
     #banner2 form input, #banner2 form label {
-      margin-left: 1.5rem;
       padding: 0.5rem; }
 
 .onbanner {
@@ -155,7 +154,7 @@ img {
 
 .f-icons {
   padding: 2rem;
-  width: 20%;
+  width: 40%;
   display: flex;
   float: left;
   justify-items: center; }
@@ -170,8 +169,7 @@ img {
   background-color: gray; }
 
 .space {
-  background-color: whitesmoke;
-  height: 10rem; }
+  height: 30%; }
 
 #outerWrap {
   position: relative;
@@ -220,9 +218,7 @@ img {
   .projects {
     grid-template-columns: repeat(3, 1fr); }
   .onbanner {
-    margin-top: -13rem; }
-  #banner2 {
-    width: 30%; } }
+    margin-top: -13rem; } }
 
 @media screen and (max-width: 768px) {
   h1 {
@@ -237,6 +233,7 @@ img {
     width: 80%;
     margin-left: 10%; }
   .col1 .icons {
+    padding: 1%;
     margin-top: 10%;
     margin-bottom: 8%;
     width: 25%; }
@@ -274,14 +271,19 @@ img {
     height: 75vh;
     transform: translate3d(-100, 0, 0);
     font-size: 24px; }
-  .onbanner {
-    margin-top: -10rem; }
   .list {
     grid-template-columns: 1fr; }
   .col3 {
     grid-template-columns: 1fr; }
   #banner2 {
-    width: 44%; } }
+    width: 50%; }
+  .onbanner {
+    margin-top: -5rem;
+    margin-left: 40%; }
+  .space .f-icons {
+    width: 80%; }
+    .space .f-icons li {
+      width: 10%; } }
 
 @media screen and (max-width: 500px) {
   h1 {
@@ -296,9 +298,11 @@ img {
     width: 80%;
     margin-left: 10%; }
   .col1 .icons {
+    padding: 0;
     margin-top: 10%;
     margin-bottom: 8%;
-    width: 25%; }
+    width: 25%;
+    margin-left: 0; }
   .col2 {
     display: flex;
     flex-direction: column; }
@@ -328,4 +332,17 @@ img {
   .footer {
     background-color: gainsboro; }
     .footer li {
-      padding: 30%; } }
+      padding: 30%; }
+  #banner2 {
+    width: 100%; }
+    #banner2 form {
+      padding: 4rem; }
+  .onbanner {
+    margin-top: -1rem;
+    margin-left: 26%; }
+  .space {
+    margin-top: 30rem; }
+    .space .f-icons {
+      width: 100%; }
+      .space .f-icons li {
+        width: 25%; } }

@@ -18,7 +18,7 @@ section{font-family: Roboto, sans-serif;}
     top: 45rem;
     left: 0;
     right: 0;
-    width: 26%;
+    width: 28%;
     height: 100%;
     z-index: -2;
     display: flex;
@@ -36,7 +36,7 @@ section{font-family: Roboto, sans-serif;}
          background-color:white;
        }
        input, label{
-         margin-left: 1.5rem;
+        //  margin-left: 1.5rem;
          padding: 0.5rem;
        }
     }
@@ -190,7 +190,7 @@ h4{
 
 .f-icons{
   padding: 2rem;
-    width: 20%;
+    width: 40%;
     display: flex;
     float: left;
     justify-items: center;
@@ -210,8 +210,7 @@ h4{
 }
 
 .space{
-  background-color: whitesmoke;
-    height: 10rem;
+    height: 30%;
 }
 
 #outerWrap {
@@ -247,7 +246,11 @@ h4{
 
 
 
-
+  // @media screen and (min-width: 1185px) {
+  //   #banner2 {
+  //     width: 25%;
+  //   }
+  // }
   
 @media screen and (min-width: 1171px) {
  h1{
@@ -272,6 +275,9 @@ h4{
       }
     }
   }
+  .space{
+    // height: 5rem;
+}
 
 @media screen and (min-width: 769px) and (max-width: 170px) {
   .projects {
@@ -279,9 +285,9 @@ h4{
     .onbanner{
       margin-top: -13rem;
   }
-  #banner2 {
-    width: 30%;
-  }
+  // #banner2 {
+  //   width: 30%;
+  // }
   // .nav-items{
   //   list-style-type: none;
   //   margin-left:60%;
@@ -315,6 +321,7 @@ h4{
       margin-left:10%;
     }
   .icons {
+    padding: 1%;
     margin-top: 10%;
     margin-bottom: 8%;
     width:25%;
@@ -374,9 +381,9 @@ h4{
     transform: translate3d(-100, 0, 0);
     font-size: 24px;
    }
-   .onbanner{
-    margin-top: -10rem;
-}
+  //  .onbanner{
+  //   margin-top: -10rem;
+
     .list{
       grid-template-columns: 1fr ;
     }
@@ -384,8 +391,23 @@ h4{
       grid-template-columns: 1fr ;
     }
   #banner2 {
-    width: 44%;
+    width: 50%;
   }
+  .onbanner{
+    margin-top: -5rem;
+  
+    margin-left: 40%;
+} 
+.space{
+  // margin-top: 30rem;
+  .f-icons{
+      width: 80%;
+    li{
+     
+      width: 10%;
+    }
+  }
+}
 }
 
 @media screen and (max-width: 500px) {
@@ -406,9 +428,12 @@ h4{
       margin-left:10%;
     }
   .icons {
+    padding: 0;
     margin-top: 10%;
     margin-bottom: 8%;
     width:25%;
+    margin-left: 0;
+
   }
   }
 
@@ -458,6 +483,29 @@ h4{
   
     }
   }
+  #banner2 {
+    width: 100%;
+    form{
+      padding: 4rem;
+ 
+   }
+  }
+  .onbanner{
+    margin-top: -1rem;
+  
+    margin-left: 26%;
 
+}
+
+.space{
+    margin-top: 30rem;
+    .f-icons{
+        width: 100%;
+      li{
+       
+        width: 25%;
+      }
+    }
+}
 
 }
