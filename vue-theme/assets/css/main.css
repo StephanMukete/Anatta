@@ -22,7 +22,8 @@ section {
   flex-direction: column; }
   #banner2 img {
     padding: 1.5rem;
-    height: 35%; }
+    height: 35%;
+    width: 100%; }
   #banner2 form {
     padding: 1rem; }
   #banner2 .box {
@@ -76,8 +77,9 @@ h4 {
   font-size: 1.5rem; }
 
 img {
-  width: 100%;
-  height: 100%; }
+  max-width: 100%;
+  width: auto;
+  height: auto; }
 
 .form-button {
   padding: 0.5rem;
@@ -202,6 +204,8 @@ img {
     width: 10%;
     margin-left: 60%;
     padding: 2%; }
+    .nav-items li {
+      padding: 20%; }
   .col3 {
     grid-template-columns: 1fr; }
   .col1 h2 {
@@ -262,7 +266,9 @@ img {
   .nav-items {
     width: 10%;
     margin-left: 60%;
-    padding: 2%; }
+    padding: 1%; }
+    .nav-items li {
+      padding: 15%; }
   .col3 {
     grid-template-columns: 1fr; }
   .col1 h2 {
@@ -309,8 +315,8 @@ img {
     #banner2 form {
       padding: 4rem; }
   .onbanner {
-    margin-top: -1rem;
-    margin-left: 26%; }
+    margin-top: 1rem;
+    margin-left: 20%; }
   .space {
     margin-top: 30rem; }
     .space .f-icons {
