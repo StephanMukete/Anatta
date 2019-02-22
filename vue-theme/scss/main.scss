@@ -178,6 +178,22 @@ img{
         display: flex;
         justify-content: space-around;
         width: 20%;
+       
+        .facebook{
+            color: blue;
+        }
+
+        .twitter{
+            color: #00aced;
+        }
+          
+        .instagram{
+            color: #517fa4;
+        }
+          
+        .youtube {
+            color: #bb0000;
+        }
   }
 }
 

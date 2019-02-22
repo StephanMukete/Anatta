@@ -140,6 +140,14 @@ img {
     display: flex;
     justify-content: space-around;
     width: 20%; }
+    .f-icons li .facebook {
+      color: blue; }
+    .f-icons li .twitter {
+      color: #00aced; }
+    .f-icons li .instagram {
+      color: #517fa4; }
+    .f-icons li .youtube {
+      color: #bb0000; }
 
 .bg {
   padding: 2rem;
