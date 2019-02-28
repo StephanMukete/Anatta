@@ -4,9 +4,10 @@
             <h1> {{preview.cover_text[0].text}} </h1>
             <div id = "banner">
                 <div class="homepage">
-<img  :src="preview.cover_photo.url" alt="homepage">
+                    <img  :src="preview.cover_photo.url" alt="homepage">
                 </div> 
                 <div class="col2">
+                
                     <img :src="preview.image1.url" alt="image1"> 
                     <div class="row2">
                         <h4> {{preview.image1_maintext[0].text}} </h4>
