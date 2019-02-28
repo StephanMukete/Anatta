@@ -46,8 +46,11 @@ section {
   background-color: whitesmoke; }
 
 header {
-  margin-top: 5%;
-  margin-left: 35%; }
+  margin-top: 2%; }
+  header img {
+    padding: 1%;
+    width: 12rem;
+    float: left; }
 
 .nav-items {
   list-style-type: none;
@@ -57,6 +60,10 @@ header {
   width: 20%; }
   .nav-items li {
     padding: 12%; }
+
+a {
+  text-decoration: none;
+  color: blue; }
 
 h5 {
   color: blue; }
@@ -267,6 +274,8 @@ img {
       width: 10%; } }
 
 @media screen and (max-width: 500px) {
+  header img {
+    width: 8rem; }
   h1 {
     font-size: 1.5rem; }
   .nav-items {

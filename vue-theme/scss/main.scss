@@ -58,8 +58,13 @@ section{font-family: Roboto, sans-serif;}
 }
 
 header{
-    margin-top: 5%;
-    margin-left: 35%;
+    margin-top: 2%;
+
+    img{
+        padding: 1%;
+        width: 12rem;
+        float: left;
+    }
 }
 
 .nav-items{
@@ -72,6 +77,11 @@ header{
     li{
         padding: 12%;
     }
+}
+
+a {
+    text-decoration: none;
+    color: blue;
 }
 
 h5{
@@ -386,6 +396,9 @@ img{
   }
 
 @media screen and (max-width: 500px) {
+    header img{
+        width: 8rem; 
+    }
     h1{
         font-size: 1.5rem;
     }
